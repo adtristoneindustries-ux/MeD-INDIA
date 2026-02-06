@@ -1,0 +1,19 @@
+# Batch Update Script for All HTML Files
+
+## Changes to apply to: about.html, services.html, mbbs-india.html, mbbs-abroad.html, blog.html, contact.html
+
+1. Update favicon link in <head>
+2. Update logo to logobg.png
+3. Add footer logo (medlogo.jpeg)
+4. Update Quick Links (add Home and Contact)
+5. Update contact info (new email and phone numbers)
+6. Update copyright year with dynamic script
+7. Update WhatsApp button (new number, remove animation, new icon)
+
+Files to update:
+- about.html
+- services.html  
+- mbbs-india.html
+- mbbs-abroad.html
+- blog.html
+- contact.html

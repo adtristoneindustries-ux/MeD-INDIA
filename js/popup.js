@@ -1,20 +1,15 @@
-// Show popup after 3 seconds
+// Initialize EmailJS - Replace with your Public Key
+emailjs.init('YOUR_PUBLIC_KEY'); // Get from EmailJS Dashboard
+
+// Show popup after 1 second with smooth animation
 setTimeout(() => {
   const popup = document.querySelector('.popup-overlay');
   if (popup && !sessionStorage.getItem('popupShown')) {
     popup.classList.add('active');
-    if (typeof gsap !== 'undefined') {
-      gsap.from('.popup-container', {
-        scale: 0.5,
-        opacity: 0,
-        duration: 0.5,
-        ease: 'back.out(1.7)'
-      });
-    }
   }
-}, 3000);
+}, 1000);
 
-// Close popup
+// Close popup - only with close button
 const closeBtn = document.querySelector('.popup-close');
 if (closeBtn) {
   closeBtn.addEventListener('click', () => {
@@ -24,14 +19,6 @@ if (closeBtn) {
   });
 }
 
-// Close on overlay click
-document.querySelector('.popup-overlay')?.addEventListener('click', (e) => {
-  if (e.target.classList.contains('popup-overlay')) {
-    e.target.classList.remove('active');
-    sessionStorage.setItem('popupShown', 'true');
-  }
-});
-
 // Form submission
 const popupForm = document.getElementById('popupForm');
 if (popupForm) {
@@ -40,24 +27,42 @@ if (popupForm) {
     
     const submitBtn = popupForm.querySelector('button[type="submit"]');
     const message = document.getElementById('popupMessage');
+    const mobileInput = document.getElementById('popupMobile');
+    const emailInput = document.getElementById('popupEmail');
+    
+    // Validate mobile number (exactly 10 digits)
+    if (!/^[0-9]{10}$/.test(mobileInput.value)) {
+      message.className = 'popup-message error';
+      message.textContent = 'Mobile number must be exactly 10 digits (numbers only).';
+      mobileInput.focus();
+      return;
+    }
+    
+    // Validate email format
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
+      message.className = 'popup-message error';
+      message.textContent = 'Please enter a valid email address.';
+      return;
+    }
     
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending...';
     
     const formData = {
       name: document.getElementById('popupName').value,
-      email: document.getElementById('popupEmail').value,
-      mobile: document.getElementById('popupMobile').value,
-      state: document.getElementById('popupState').value
+      email: emailInput.value,
+      mobile: mobileInput.value,
+      state: document.getElementById('popupState').value,
+      to_email: 'medindiacag@gmail.com' // Your company email
     };
     
     try {
-      // EmailJS integration
-      // Initialize: emailjs.init('YOUR_PUBLIC_KEY');
-      // await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData);
-      
-      // Simulated success for demo
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Send email via EmailJS
+      await emailjs.send(
+        'YOUR_SERVICE_ID',    // Replace with your Service ID
+        'YOUR_TEMPLATE_ID',   // Replace with your Template ID
+        formData
+      );
       
       message.className = 'popup-message success';
       message.textContent = 'Thank you! We will contact you soon.';
@@ -70,7 +75,7 @@ if (popupForm) {
       
     } catch (error) {
       message.className = 'popup-message error';
-      message.textContent = 'Something went wrong. Please try again.';
+      message.textContent = 'Failed to send. Please try again or call us directly.';
     } finally {
       submitBtn.disabled = false;
       submitBtn.textContent = 'Submit';

@@ -33,13 +33,11 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   }
 });
 
-// WhatsApp button
-const whatsappBtn = document.querySelector('.whatsapp-float');
-if (whatsappBtn) {
-  whatsappBtn.addEventListener('click', () => {
-    const message = encodeURIComponent('Hello! I am interested in MeD INDIA services.');
-    window.open(`https://wa.me/919876543210?text=${message}`, '_blank');
-  });
+// Dynamic copyright year
+const yearSpan = document.getElementById('currentYear');
+if (yearSpan) {
+  const currentYear = new Date().getFullYear();
+  yearSpan.textContent = currentYear >= 2026 ? currentYear : 2026;
 }
 
 // GSAP animations
@@ -51,3 +49,4 @@ if (typeof gsap !== 'undefined') {
     ease: 'power3.out'
   });
 }
+
