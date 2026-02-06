@@ -1,0 +1,193 @@
+.mbbs-abroad-hero {
+  padding: 8rem 2rem 4rem;
+  background: linear-gradient(135deg, var(--medical-blue), var(--navy-blue));
+  color: var(--white);
+  text-align: center;
+}
+
+.mbbs-abroad-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.countries-section {
+  max-width: 1400px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+.countries-section h2 {
+  color: var(--navy-blue);
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.countries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.country-card {
+  background: var(--white);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.country-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.country-flag {
+  width: 100%;
+  height: 200px;
+  background: var(--light-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+}
+
+.country-info {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.country-info h3 {
+  color: var(--navy-blue);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.country-info p {
+  color: var(--dark-text);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.country-features {
+  list-style: none;
+  padding: 0;
+}
+
+.country-features li {
+  padding: 0.5rem 0;
+  color: var(--dark-text);
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.country-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--globe-green);
+  font-weight: bold;
+}
+
+.process-section {
+  background: var(--light-bg);
+  padding: 4rem 2rem;
+  margin-top: 4rem;
+}
+
+.process-section h2 {
+  color: var(--navy-blue);
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.process-steps {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.process-step {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  position: relative;
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  background: var(--medical-blue);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 auto 1rem;
+}
+
+.process-step h4 {
+  color: var(--navy-blue);
+  margin-bottom: 0.5rem;
+}
+
+.process-step p {
+  color: var(--dark-text);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .mbbs-abroad-hero h1 {
+    font-size: 2rem;
+  }
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+.info-card {
+  background: var(--light-bg);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.info-card h3 {
+  color: var(--navy-blue);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.info-card p {
+  color: var(--dark-text);
+  line-height: 1.7;
+  flex-grow: 1;
+}

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <rect width="600" height="400" fill="#F6F8FA"/>
+  <circle cx="300" cy="200" r="100" fill="#1F6FAF" opacity="0.2"/>
+  <circle cx="300" cy="200" r="70" fill="#6ED36F" opacity="0.3"/>
+  <path d="M 250 200 L 280 230 L 350 160" stroke="#0F3F63" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="300" y="320" font-family="Arial, sans-serif" font-size="24" fill="#0F3F63" text-anchor="middle" font-weight="bold">About MeD INDIA</text>
+</svg>

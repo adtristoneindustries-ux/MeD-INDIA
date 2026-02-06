@@ -1,0 +1,138 @@
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.popup-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-container {
+  background: var(--white);
+  border-radius: 15px;
+  padding: 2.5rem;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  transform: scale(0.8);
+  transition: transform 0.3s;
+}
+
+.popup-overlay.active .popup-container {
+  transform: scale(1);
+}
+
+.popup-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  background: var(--navy-blue);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+
+.popup-close:hover {
+  background: var(--medical-blue);
+}
+
+.popup-container h2 {
+  color: var(--navy-blue);
+  margin-bottom: 0.5rem;
+}
+
+.popup-container p {
+  color: var(--dark-text);
+  margin-bottom: 1.5rem;
+}
+
+.popup-form .form-group {
+  margin-bottom: 1.2rem;
+}
+
+.popup-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--dark-text);
+  font-weight: 500;
+}
+
+.popup-form input,
+.popup-form select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.3s;
+}
+
+.popup-form input:focus,
+.popup-form select:focus {
+  outline: none;
+  border-color: var(--medical-blue);
+}
+
+.popup-form button {
+  width: 100%;
+  padding: 1rem;
+  background: var(--medical-blue);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.popup-form button:hover {
+  background: var(--navy-blue);
+}
+
+.popup-form button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.popup-message {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  display: none;
+}
+
+.popup-message.success {
+  background: #d4edda;
+  color: #155724;
+  display: block;
+}
+
+.popup-message.error {
+  background: #f8d7da;
+  color: #721c24;
+  display: block;
+}

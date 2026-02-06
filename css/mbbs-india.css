@@ -1,0 +1,108 @@
+.mbbs-india-hero {
+  padding: 8rem 2rem 4rem;
+  background: linear-gradient(135deg, var(--navy-blue), var(--medical-blue));
+  color: var(--white);
+  text-align: center;
+}
+
+.mbbs-india-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.mbbs-content {
+  max-width: 1400px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+.info-section {
+  margin-bottom: 4rem;
+}
+
+.info-section h2 {
+  color: var(--navy-blue);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  align-items: stretch;
+}
+
+.info-card {
+  background: var(--light-bg);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.info-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.info-card h3 {
+  color: var(--medical-blue);
+  margin-bottom: 1rem;
+}
+
+.info-card p {
+  color: var(--dark-text);
+  line-height: 1.8;
+}
+
+.seat-types {
+  background: var(--light-bg);
+  padding: 4rem 2rem;
+  border-radius: 15px;
+  margin-bottom: 4rem;
+}
+
+.seat-types h2 {
+  color: var(--navy-blue);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.seat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.seat-card {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 10px;
+  border-left: 5px solid var(--medical-blue);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.seat-card h4 {
+  color: var(--navy-blue);
+  margin-bottom: 0.5rem;
+}
+
+.seat-card p {
+  color: var(--dark-text);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .mbbs-india-hero h1 {
+    font-size: 2rem;
+  }
+}
