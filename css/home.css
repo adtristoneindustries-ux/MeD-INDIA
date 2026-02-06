@@ -201,6 +201,19 @@
   font-size: 1.5rem;
   font-weight: 700;
   display: inline-block;
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.package-price:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(244, 196, 48, 0.5);
+}
+
+.package-price.featured-price {
+  background: var(--globe-green);
+  color: var(--white);
 }
 
 .contact-info {

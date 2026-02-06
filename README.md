@@ -9,6 +9,7 @@ A professional multi-page website for medical admission guidance and counseling 
 - **GSAP Animations**: Smooth scroll animations and transitions
 - **Auto Popup Form**: Lead generation form with EmailJS integration
 - **WhatsApp Integration**: Floating WhatsApp button on all pages
+- **Form Validation**: 10-digit mobile number validation (compulsory)
 - **SEO Optimized**: Meta tags and semantic HTML
 - **Professional UI/UX**: Clean, modern design with brand colors
 
@@ -79,8 +80,8 @@ To enable email functionality:
 1. Sign up at [EmailJS](https://www.emailjs.com/)
 2. Create an email service and template
 3. Update the following files with your credentials:
-   - `js/popup.js` - Line 44-45
-   - `js/contact.js` - Line 38-39
+   - `js/popup.js` - Line 2
+   - `js/contact.js` - Line 29
 
 ```javascript
 // Initialize EmailJS
@@ -95,17 +96,27 @@ await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData);
 Update the WhatsApp number in `js/global.js`:
 
 ```javascript
-window.open(`https://wa.me/919876543210?text=${message}`, '_blank');
+window.open(`https://wa.me/918610013089?text=${message}`, '_blank');
 ```
 
-Replace `919876543210` with your actual WhatsApp number (with country code).
+Replace `918610013089` with your actual WhatsApp number (with country code).
+
+## ✅ Form Validation
+
+Both popup and contact forms include:
+- **10-digit mobile validation** (compulsory)
+- Only numbers allowed (no letters/special characters)
+- HTML5 validation with pattern, maxlength, minlength
+- JavaScript validation with clear error messages
+- Auto-focus on invalid fields
 
 ## 🎭 Key Features by Page
 
 ### Home Page
-- Hero section with floating globe animation
-- Animated counters (Students, Colleges, Success Rate)
-- Services preview cards
+- Hero section with call-to-action
+- Package banner (Contact for Pricing)
+- Animated counters (Years, Students, Admissions)
+- Package benefits showcase
 - CTA sections
 
 ### About Page
@@ -131,7 +142,7 @@ Replace `919876543210` with your actual WhatsApp number (with country code).
 - Why study abroad section
 
 ### Packages Page
-- 6 pricing tiers
+- Multiple pricing tiers
 - Featured packages
 - Interactive package cards
 - WhatsApp integration for inquiries
@@ -143,7 +154,7 @@ Replace `919876543210` with your actual WhatsApp number (with country code).
 
 ### Contact Page
 - Contact information
-- EmailJS contact form
+- EmailJS contact form with validation
 - FAQ section
 - Map placeholder
 
@@ -168,8 +179,8 @@ All animations are powered by GSAP:
 Edit the footer in all HTML files:
 ```html
 <li>📧 medindiacag@gmail.com</li>
-<li>📞 +91 98765 43210</li>
-<li>📍 Chandigarh, India</li>
+<li>📞 +91 86100 13089 / +91 96776 71220</li>
+<li>📍 India</li>
 ```
 
 ### Update Brand Colors
@@ -180,6 +191,12 @@ Edit CSS variables in `css/global.css`:
   --medical-blue: #1F6FAF;
   /* ... */
 }
+```
+
+### Update Package Pricing
+Edit `index.html` packages-banner section:
+```html
+<div class="package-price">Contact for Pricing</div>
 ```
 
 ## 🌐 Browser Support
@@ -195,7 +212,7 @@ Edit CSS variables in `css/global.css`:
 
 ## 🤝 Support
 
-For support, email medindiacag@gmail.com or call +91 98765 43210.
+For support, email medindiacag@gmail.com or call +91 86100 13089 / +91 96776 71220.
 
 ---
 
